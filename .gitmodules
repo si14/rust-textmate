@@ -1,0 +1,3 @@
+[submodule "tests/textmate-grammars-themes"]
+	path = tests/textmate-grammars-themes
+	url = git@github.com:shikijs/textmate-grammars-themes.git
