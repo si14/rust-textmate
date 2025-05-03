@@ -20,6 +20,7 @@ pub(crate) enum Error {
 #[serde(rename_all = "camelCase")]
 pub(crate) struct SyntaxDefinition {
     // expected to be globally unique
+    // todo: check while linking
     pub(crate) scope_name: ScopeName,
     pub(crate) patterns: Vec<Rule>,
 

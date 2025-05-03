@@ -135,7 +135,7 @@ impl RepositoryStack {
 pub(crate) struct SyntaxSet(pub(crate) Vec<SyntaxDefinition>);
 
 #[derive(Debug, Clone)]
-struct SyntaxDefinition {
+pub(crate) struct SyntaxDefinition {
     scope_name: ScopeName,
     rules: Vec<Option<Rule>>,
     regexes: Vec<parse::RegExpString>,
@@ -145,7 +145,7 @@ struct SyntaxDefinition {
 }
 
 impl SyntaxDefinition {
-    fn compile(raw: parse::SyntaxDefinition) -> Result<Self, Error> {
+    pub(crate) fn compile(raw: parse::SyntaxDefinition) -> Result<Self, Error> {
         let mut syntax = Self {
             scope_name: raw.scope_name.into(),
             rules: Vec::new(),
@@ -565,7 +565,7 @@ mod tests {
         "xml.json",
         "jinja.json",
         "smalltalk.json",
-        // fail to compile
+        // fails to compile
         "latex.json",
     ];
 
